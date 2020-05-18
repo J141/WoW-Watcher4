@@ -1,0 +1,118 @@
+<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="options.lua" />
+	<Frame name="watcher_options" hidden="true" parent="UIParent" toplevel="true" protected="true" clipChildren="true">
+		<Size>
+			<AbsDimension x="1088" y="729" />
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER" x="0" y="41" />
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="1" right="1" top="1" bottom="1" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="Title" inherits="GameFontNormal" font="Fonts\MORPHEUS.TTF" text="Watcher 4">
+					<Size x="1088" y="47" />
+					<Anchors>
+						<Anchor point="TOPLEFT" />
+					</Anchors>
+					<FontHeight val="18" />
+					<Color r="1" g="1" b="1" />
+					<Shadow>
+						<Offset />
+						<Color a="0" r="0" g="0" b="0" />
+					</Shadow>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Frame name="watcher_options_navbar">
+				<Size x="214" y="729" />
+				<Anchors>
+					<Anchor point="TOPLEFT" />
+				</Anchors>
+				<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="" tile="true">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize val="32" />
+					<EdgeSize val="32" />
+				</Backdrop>
+			</Frame>
+			<Button name="watcher_options_selected_spec" enableMouse="true">
+				<Size x="214" y="63" />
+				<Anchors>
+					<Anchor point="TOPLEFT" />
+				</Anchors>
+				<Backdrop bgFile="nterface\Buttons\WHITE8x8" edgeFile="" alphaMode="DISABLE">
+					<BackgroundInsets>
+						<AbsInset left="11" right="12" top="12" bottom="11" />
+					</BackgroundInsets>
+					<TileSize val="32" />
+					<EdgeSize val="32" />
+					<Color a="0" r="1" g="1" b="1" />
+				</Backdrop>
+				<Layers>
+					<Layer level="OVERLAY">
+						<FontString name="SelectedSpecName" inherits="GameFontNormal" font="Fonts\ARKai_C.ttf" text="">
+							<Size x="122" y="32" />
+							<Anchors>
+								<Anchor point="TOPLEFT" x="63" y="-15" />
+							</Anchors>
+							<FontHeight val="24" />
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="SelectedSpecIcon" inherits="UIPanelButtonTemplate" frameStrata="HIGH" text="">
+						<Size x="32" y="32" />
+						<Anchors>
+							<Anchor point="TOPLEFT" x="25" y="-15" />
+						</Anchors>
+					</Button>
+					<Frame name="watcher_alternateSpecializations">
+						<Size x="184" y="118" />
+						<Anchors>
+							<Anchor point="TOPLEFT" x="15" y="-53" />
+						</Anchors>
+						<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="" tile="true">
+							<BackgroundInsets left="2" right="2" top="2" bottom="2" />
+							<TileSize val="32" />
+							<EdgeSize val="32" />
+						</Backdrop>
+						<Scripts>
+							<OnLoad>
+								watcher_alternateSpecializations_OnLoad()
+							</OnLoad>
+						</Scripts>
+					</Frame>
+				</Frames>
+				<Scripts>
+					<OnEnter>
+						watcher_options_selected_spec_OnEnter()
+					</OnEnter>
+					<OnLeave>
+						watcher_options_selected_spec_OnLeave()
+					</OnLeave>
+					<OnClick>
+						watcher_options_selected_spec_OnClick();
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				watcher_options_OnLoad()
+			</OnLoad>
+		</Scripts>
+	</Frame>
+</Ui>
